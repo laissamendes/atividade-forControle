@@ -7,10 +7,19 @@
 
     //ENTRADA
 
+    let populacao = 80000;
+    let queremosAtingir = 200000;
+    const taxaCrescimento = 0.03;
 
     //PROCESSAMENTO
-
+    let anos = 0;
+    for (let anos = 0; populacao <= queremosAtingir; anos++) {
+        populacao = populacao + (populacao * taxaCrescimento);
+        ///populacao = populacao * 1.03;
+    }
 
     //SAÍDA
+
+    document.write("Serão necessários " + anos + ".");
 
 </script>

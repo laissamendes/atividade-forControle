@@ -7,10 +7,18 @@
 
     //ENTRADA
 
+    alert("Insira 5 números:");
+    let soma = 0;
 
     //PROCESSAMENTO
 
+    for (let contador = 1; contador <= 5; contador++){
+        let numero = Number(prompt((contador)+ "° número:"));
+        soma = soma + numero;
+    }
+    
+    let media = soma / 5;
 
-    //SAÍDA
-
+    document.write("A soma dos seus números é: " + soma + "</br>");
+    document.write("E a média dos seus números é: " + media);
 </script>
