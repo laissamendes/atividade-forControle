@@ -4,13 +4,27 @@
     PROBLEMA
     Peça para o programa perguntar ao professor regente o nome dos três candidados a representante da sala.
     Peça também para o programa perguntar ao professor regente a quantidade de alunos votantes.
-    Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação, com o quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
+    Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação, 
+    com o quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
     */
 
     //ENTRADA
 
+    alert("Olá! Diga o nome dos 3 candidatos a representantes da sala:");
+    let perguntas = [];
+    for (let contador = 1; contador <= 3; contador++) {
+        perguntas = prompt("Cantidato " + contador + ":").toLowerCase;
+    }
+    alert("Agora diga quantos alunos da sua turma irão votar:");
+    let quanAlunos = parseInt(prompt("Insira aqui:"));
+    let votos = [];
+    for (let contador = 1; contador <= quanAlunos; contador++) {
+        votos = prompt("Eleitor " + contador + ", qual é o seu voto?").toLowerCase;
+        
+    }
 
     //PROCESSAMENTO
+
 
 
     //SAÍDA
