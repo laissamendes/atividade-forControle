@@ -11,22 +11,49 @@
     //ENTRADA
 
     alert("Olá! Diga o nome dos 3 candidatos a representantes da sala:");
-    let perguntas = [];
-    for (let contador = 1; contador <= 3; contador++) {
-        perguntas = prompt("Cantidato " + contador + ":").toLowerCase;
-    }
-    alert("Agora diga quantos alunos da sua turma irão votar:");
-    let quanAlunos = parseInt(prompt("Insira aqui:"));
-    let votos = [];
-    for (let contador = 1; contador <= quanAlunos; contador++) {
-        votos = prompt("Eleitor " + contador + ", qual é o seu voto?").toLowerCase;
-        
-    }
+    const nome1 = prompt("Diga o nome do primeiro candidato:");
+    const nome2 = prompt("Diga o nome do segundo candidato:");
+    const nome3 = prompt("Diga o nome do terceiro candidato:");
+
+    let votosNome1 = 0;
+    let votosNome2 = 0;
+    let votosNome3 = 0;
+
+    let resultado;
 
     //PROCESSAMENTO
 
+    alert("Agora diga quantos alunos da sua turma irão votar:");
+    let quanAlunos = parseInt(prompt("Insira aqui:"));
+    let votos;
+    for (let contador = 1; contador <= quanAlunos; contador++) {
+        votos = parseInt(prompt("Eleitor " + contador + ", qual é o seu voto? (1, 2 ou 3)"));
+        if (votos === 1) {
+            votosNome1 += 1;
+        } if (votos === 2) {
+            votosNome2 += 1;
+        } if (votos === 3) {
+            votosNome3 += 1;
+        }
+    }
 
+    let porcentagem1 = 100 / (quanAlunos / votosNome1);
+    let porcentagem2 = 100 / (quanAlunos / votosNome2);
+    let porcentagem3 = 100 / (quanAlunos / votosNome3);
+
+    if (votosNome1 > votosNome2 && votosNome1 > votosNome3) {
+        resultado = "Parabéns Candidato(a) " + nome1 + ", você é o mais novo representante!</br>";
+    } else if (votosNome2 > votosNome1 && votosNome2 > votosNome3) {
+        resultado = "Parabéns Candidato(a) " + nome2 + ", você é o mais novo representante!</br>";
+    } else {
+        resultado = "Parabéns Candidato(a) " + nome3 + ", você é o mais novo representante!</br>";
+    }
 
     //SAÍDA
+
+    document.write(resultado);
+    document.write(nome1+" seus votos:"+votosNome1+"</br> Porcentagem: "+porcentagem1+"% </br>");
+    document.write(nome2+" seus votos:"+votosNome2+"</br> Porcentagem: "+porcentagem2+"% </br>");
+    document.write(nome3+" seus votos:"+votosNome3+"</br> Porcentagem: "+porcentagem3+"% </br>");
 
 </script>
